@@ -1,0 +1,25 @@
+/* Table Screen Size */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: 90vh;
+        margin: 30px auto;
+    }
+
+    /* -- Left Box Design Starts -- */
+    .left-col {
+        width: 100%;
+        height: 50%;
+        border-right: none;
+        border-bottom: 5px solid #fff;
+        flex-direction: column;
+    }
+}
+
+
+/* Mobile Screen Size */
+@media screen and (max-width: 767px) {
+    .container {
+        width: 95vw;
+    }
+}

@@ -31,6 +31,8 @@ document.querySelectorAll('.column').forEach(button => {
 // Clear the pin input field when clicked
 document.querySelector('.clear').addEventListener('click', () => {
     document.getElementById('pinInput').value = '0';
+    document.getElementById('message').style.display = 'none';
+    document.getElementById('warning').style.display = 'none';
 });
 
 
