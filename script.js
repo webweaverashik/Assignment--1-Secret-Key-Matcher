@@ -17,10 +17,12 @@ function generateSecretKey() {
 document.querySelectorAll('.column').forEach(button => {
     button.addEventListener('click', () => {
         let pinInput = document.getElementById('pinInput');
-        if (pinInput.value === '0') {
-            pinInput.value = button.innerText;
-        } else {
-            pinInput.value += button.innerText;
+        if (pinInput.value.length < 6) {
+            if (pinInput.value === '0') {
+                pinInput.value = button.innerText;
+            } else {
+                pinInput.value += button.innerText;
+            }
         }
     });
 });
@@ -51,4 +53,32 @@ document.querySelector('.submit').addEventListener('click', () => {
         document.getElementById('warning').style.display = 'block';
     }
     document.getElementById('pinInput').value = '0';
+});
+
+
+// let's handle keyboard number pads
+document.addEventListener('keydown', (event) => {
+    let pinInput = document.getElementById('pinInput');
+    if (event.key >= '0' && event.key <= '9') {
+        if (pinInput.value.length < 6) {
+            if (pinInput.value === '0') {
+                pinInput.value = event.key;
+            } else {
+                pinInput.value += event.key;
+            }
+        }
+    } else if (event.key === 'Backspace') {
+        pinInput.value = pinInput.value.slice(0, -1) || '0';
+    } else if (event.key === 'Escape') {
+        pinInput.value = '0';
+    } else if (event.key === 'Enter') {
+        if (pinInput.value === secretKey) {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('warning').style.display = 'none';
+        } else {
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('warning').style.display = 'block';
+        }
+        pinInput.value = '0';
+    }
 });
