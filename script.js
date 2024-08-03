@@ -41,7 +41,7 @@ document.querySelector('.clear').addEventListener('click', () => {
 document.getElementById('del').addEventListener('click', () => {
     let pinInput = document.getElementById('pinInput');
     pinInput.value = pinInput.value.slice(0, -1) || '0';
-});
+}); 
 
 
 // submit button to check the secretKey and the typed digits
