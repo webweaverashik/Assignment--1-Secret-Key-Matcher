@@ -14,12 +14,32 @@
         border-bottom: 5px solid #fff;
         flex-direction: column;
     }
+
+    /* -- Right Box Design Starts -- */
+    .numpads button {
+        flex: 30%;
+    }
 }
 
 
 /* Mobile Screen Size */
 @media screen and (max-width: 767px) {
     .container {
-        width: 95vw;
+        width: 100%;
+    }
+
+    .left-col {
+        height: 60%;
+        padding: 50px;
+    }
+
+    .right-col {
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .numpads button {
+        flex: 40%;
     }
 }
